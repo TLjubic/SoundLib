@@ -1,0 +1,23 @@
+﻿@model Model.Song
+@{
+    ViewData["Title"] = "Izmjena pjesme";
+}
+
+<head>
+    <link href="~/css/Style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+
+<ol class="breadcrumb" style="margin-top: 150px;">
+    <li><a asp-action="Index">Songs</a></li>
+    <li class="active">Edit song</li>
+</ol>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="Id" />
+            <partial name="_CreateOrUpdate" />
+        </form>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+﻿@model Model.Artist
+
+
+<div class="form-group">
+    <label class="control-label">First name</label>
+    <input asp-for="FirstName" placeholder="" class="form-control" />
+    <span asp-validation-for="FirstName" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label class="control-label">Last name</label>
+    <input asp-for="LastName" placeholder="" class="form-control" />
+</div>
+<div class="form-group">
+    <label class="control-label">Address</label>
+    <input asp-for="Address" placeholder="" class="form-control" />
+    <span asp-validation-for="Address" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label class="control-label">City</label>
+    <input asp-for="City" placeholder="" class="form-control" />
+</div>
+<div class="form-group">
+    <label class="control-label">Date of birth</label>
+    
+    <div class="input-group date" data-provide="datepicker"
+         data-date-format="@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern.ToLower()">
+        <input asp-for="DateOfBirth" placeholder="" type="text" class="form-control">
+        <div class="input-group-addon">
+            <span class="glyphicon glyphicon-th"></span>
+        </div>
+    </div>
+        
+</div>
+
+<div class="form-group">
+    <label class="control-label">Image url</label>
+    <input asp-for="ImageUrl" placeholder="" class="form-control" />
+    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label class="control-label">Description</label>
+    <input asp-for="Description" placeholder="" class="form-control" />
+</div>
+
+
+
+<div class="form-group">
+    <input type="submit" value="Save" class="btn btn-default" />
+</div>

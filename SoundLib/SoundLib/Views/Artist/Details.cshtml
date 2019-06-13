@@ -1,0 +1,109 @@
+﻿@model Model.Artist
+@{
+    ViewData["Title"] = "Details";
+}
+
+<head>
+    <link href="~/css/Style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+</head>
+
+
+@if (Model != null)
+{
+
+    <div class="info-layout">
+
+        <ol class="breadcrumb">
+            <li><a asp-controller="Artist" asp-action="Index">Artists</a></li>
+            <li class="active">@Model.FullName</li>
+        </ol>
+
+        <div class="info-title">@Model.FullName</div>
+
+        <div style="width: 100%;">
+
+        <div class="photobox info-img">
+            <div class="photobox__previewbox">
+                <img src="@Model.ImageUrl" class="photobox__preview" alt="Preview">
+            </div>
+        </div>
+
+        <div class="details" style="margin-top: 10px; float: right; width: 80%;">
+            <dl class="dl-horizontal">
+
+                <dt>
+                    Address
+                </dt>
+                <dd>
+                    @Model.Address
+                </dd>
+                <dt>
+                    City
+                </dt>
+                <dd>
+                    @Model.City
+                </dd>
+                <dt>
+                    Date of birth
+                </dt>
+                <dd>
+                    @Model.DateOfBirth
+                </dd>
+                <dt style="margin-top: 15px;">
+                    Description
+                </dt>
+                <dd style="margin-top: 15px;">
+                    @Model.Description
+                </dd>
+
+
+
+
+            </dl>
+        </div>
+            </div>
+
+    </div>
+
+
+    <div class="clear"></div>
+
+    <h4 class="album-list" style="color: rgb(118, 124, 125); margin-top: 50px; border-bottom: 1px solid rgb(166, 47, 113); ">List of albums</h4>
+
+
+    <div class="section-wrapper">
+
+        <div class="section-content" style="margin-top: 30px;">
+
+            @foreach (var item in Model.Albums)
+            {
+
+                <a asp-controller="Album" asp-action="Details" asp-route-id="@item.Id">
+                    <div class="photobox photobox_type1">
+                        <div class="photobox__previewbox">
+                            <img src="@item.ImageUrl" class="photobox__preview" alt="Preview">
+                            <span class="photobox__label">
+                                <p>@item.Title</p>
+                                <p class="artist-name">@item.Artist.FullName</p>
+                            </span>
+
+                        </div>
+                    </div>
+                </a>
+            }
+        </div>
+
+    </div>
+    <div class="clear"></div>
+
+}
+else
+{
+    <div class="alert alert-danger">
+        Nije odabran ispravni ID klijenta.
+    </div>
+
+}

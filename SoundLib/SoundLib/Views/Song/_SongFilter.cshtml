@@ -1,0 +1,8 @@
+﻿@model Model.Song
+
+<form asp-action="Search" method="post" class="form-inline">
+    <div class="form-group">
+        <input asp-for="Title" class="form-control" type="text" placeholder="Title" />
+    </div>
+    <button type="button" class="btn btn-default" onclick="search(this)"style="margin-left: 10px; background: rgb(29, 47, 61); border: none; -webkit-box-shadow: 0px 4px 5px 0px rgb(15, 202, 190); -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75); box-shadow: 0px 1px 2px 0px rgb(15, 202, 190);">Search</button>
+</form>

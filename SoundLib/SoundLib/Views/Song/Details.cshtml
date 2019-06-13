@@ -1,0 +1,63 @@
+﻿@model Model.Song
+@{
+    ViewData["Title"] = "Details";
+}
+<h2>Details</h2>
+@if (Model != null)
+{
+
+    <div>
+        <h4>Song</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                ID
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt>
+                Title
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+            <dt>
+                Rating
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Rating)
+            </dd>
+            <dt>
+                Release date
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ReleaseDate)
+            </dd>
+            <dt>
+                Duration
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Duration)
+            </dd>
+
+            <dt>
+                Artist
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Artist.FullName)
+            </dd>
+
+        </dl>
+    </div>
+
+
+
+}
+else
+{
+    <div class="alert alert-danger">
+        Nije odabran ispravni ID klijenta.
+    </div>
+
+}

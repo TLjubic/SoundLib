@@ -1,0 +1,24 @@
+﻿@model Model.Album
+
+@{
+    ViewData["Title"] = "Adding new album";
+}
+
+<head>
+    <link href="~/css/Style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+
+<ol class="breadcrumb">
+    <li><a asp-action="Index">Albums</a></li>
+    <li class="active">New Album</li>
+</ol>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateAlbum">
+            <partial name="_CreateOrUpdate" />
+        </form>
+    </div>
+</div>

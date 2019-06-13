@@ -1,0 +1,47 @@
+﻿@model Model.Song
+
+
+<div class="form-group">
+    <label class="control-label">Title</label>
+    <input asp-for="Title" placeholder="" class="form-control" />
+    <span asp-validation-for="Title" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label class="control-label">Rating</label>
+    <input asp-for="Rating" placeholder="" class="form-control" />
+</div>
+<div class="form-group">
+    <label class="control-label">Duration</label>
+    <input asp-for="Duration" placeholder="" class="form-control" />
+</div>
+<div class="form-group">
+    <label class="control-label">Release Date</label>
+   
+    <div class="input-group date" data-provide="datepicker"
+         data-date-format="@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern.ToLower()">
+        <input asp-for="ReleaseDate" placeholder="" type="text" class="form-control">
+        <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+        <div class="input-group-addon">
+            <span class="glyphicon glyphicon-th"></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <label class="control-label">Album</label>
+    <select asp-for="AlbumId" placeholder="" asp-items="ViewBag.PossibleAlbums" class="form-control"></select>
+    <span asp-validation-for="AlbumId" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label class="control-label">Artist</label>
+    <select asp-for="ArtistId" placeholder="" asp-items="ViewBag.PossibleArtists" class="form-control"></select>
+    <span asp-validation-for="ArtistId" class="text-danger"></span>
+</div>
+
+
+
+<div class="form-group">
+    <input type="submit" value="Save" class="btn btn-default" />
+</div>

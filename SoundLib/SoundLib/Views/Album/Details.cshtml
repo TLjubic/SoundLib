@@ -1,0 +1,120 @@
+﻿@model Model.Album
+@{
+    ViewData["Title"] = "Details";
+}
+
+<head>
+    <link href="~/css/Style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    
+</head>
+
+
+@if (Model != null)
+{
+
+    <div class="info-layout">
+
+        <ol class="breadcrumb">
+            <li><a asp-controller="Album" asp-action="Index">Albums</a></li>
+            <li class="active">@Model.Title</li>
+        </ol>
+
+        <div class="info-title">@Model.Title</div>
+
+        <div class="photobox info-img">
+            <div class="photobox__previewbox">
+                <img src="@Model.ImageUrl" class="photobox__preview" alt="Preview">
+            </div>
+        </div>
+
+        <div class="details">
+            <dl class="dl-horizontal">
+
+                <dt>
+                    Rating
+                </dt>
+                <dd>
+                    @Model.Rating
+                </dd>
+                <dt>
+                    Release date
+                </dt>
+                <dd>
+                    @Model.ReleaseDate
+                </dd>
+                <dt>
+                    Genre
+                </dt>
+                <dd>
+                    <a asp-controller="Album" asp-action="Search" asp-route-id="@Model.Genre.Title">@Model.Genre.Title</a>
+                </dd>
+                <dt>
+                    Artist
+                </dt>
+                <dd>
+                    <a asp-controller="Artist" asp-action="Details" asp-route-id="@Model.ArtistId">@Model.Artist.FullName</a>
+                </dd>
+                <dt>
+                    Description
+                </dt>
+                <dd>
+                    @Model.Description
+                </dd>
+                <dd>
+                    <a asp-controller="Album" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+                </dd>
+
+            </dl>
+        </div>
+
+    </div>
+
+        <div class="clear"></div>
+
+        <h4 class="song-list">Songs</h4>
+
+        <table style="margin-top: 20px; color: rgb(128, 128, 128);" class="table table-condensed" id="tbl-clients">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Title</th>
+                    <th>Duration</th>
+                    <th>Rating</th>
+                    <th>Release date</th>
+                    <th>Artist</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+
+                @{ var i = 0;
+                    foreach (var item in Model.Songs)
+                    {
+                <tr>
+                    <td>@(i = i + 1).</td>
+                    <td><a href="#">@item.Title</a></td>
+                    <td>@item.Duration</td>
+                    <td>
+                        @item.Rating
+                    </td>
+                    <td>@item.ReleaseDate</td>
+
+                    <td><a asp-controller="Artist" asp-action="Details" asp-route-id="@item.Artist.Id">@item.Artist.FullName</a></td>
+
+                </tr>
+                    }
+
+                }
+            </tbody>
+        </table>
+
+}
+else
+ {
+    <div class="alert alert-danger">
+        Nije odabran ispravni ID klijenta.
+    </div>
+
+}

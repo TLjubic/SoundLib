@@ -1,0 +1,43 @@
+﻿@model List<Model.Artist>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<head>
+    <link href="~/css/Style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+
+<div class="section-wrapper">
+ 
+    <div class="section-content">
+
+
+        <div class="add-btn">
+            <a asp-controller="Artist" asp-action="CreateArtist">Add new artist</a>
+        </div>
+
+        @foreach (var item in Model)
+        {
+
+            <a asp-controller="Artist" asp-action="Details" asp-route-id="@item.Id">
+                <div class="photobox photobox_type1">
+                    <div class="photobox__previewbox">
+                        <img src="@item.ImageUrl" class="photobox__preview" alt="Preview">
+                        <span class="photobox__label">
+                            <p>@item.FullName</p>
+                        </span>
+
+                    </div>
+                </div>
+            </a>
+        }
+    </div>
+
+</div>
+
+
+<div class="clear">
+</div>

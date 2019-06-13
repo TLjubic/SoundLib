@@ -1,0 +1,16 @@
+C:\Users\Tomislav\source\repos\SoundLib\Model\bin\Debug\netcoreapp2.1\Model.deps.json
+C:\Users\Tomislav\source\repos\SoundLib\Model\bin\Debug\netcoreapp2.1\Model.dll
+C:\Users\Tomislav\source\repos\SoundLib\Model\obj\Debug\netcoreapp2.1\Model.csproj.CoreCompileInputs.cache
+C:\Users\Tomislav\source\repos\SoundLib\Model\obj\Debug\netcoreapp2.1\Model.AssemblyInfoInputs.cache
+C:\Users\Tomislav\source\repos\SoundLib\Model\obj\Debug\netcoreapp2.1\Model.AssemblyInfo.cs
+C:\Users\Tomislav\source\repos\SoundLib\Model\bin\Debug\netcoreapp2.1\Model.pdb
+C:\Users\Tomislav\source\repos\SoundLib\Model\obj\Debug\netcoreapp2.1\Model.dll
+C:\Users\Tomislav\source\repos\SoundLib\Model\obj\Debug\netcoreapp2.1\Model.pdb
+C:\Users\Tomislav\source\SoundLib\Model\bin\Debug\netcoreapp2.1\Model.deps.json
+C:\Users\Tomislav\source\SoundLib\Model\bin\Debug\netcoreapp2.1\Model.dll
+C:\Users\Tomislav\source\SoundLib\Model\bin\Debug\netcoreapp2.1\Model.pdb
+C:\Users\Tomislav\source\SoundLib\Model\obj\Debug\netcoreapp2.1\Model.csproj.CoreCompileInputs.cache
+C:\Users\Tomislav\source\SoundLib\Model\obj\Debug\netcoreapp2.1\Model.AssemblyInfoInputs.cache
+C:\Users\Tomislav\source\SoundLib\Model\obj\Debug\netcoreapp2.1\Model.AssemblyInfo.cs
+C:\Users\Tomislav\source\SoundLib\Model\obj\Debug\netcoreapp2.1\Model.dll
+C:\Users\Tomislav\source\SoundLib\Model\obj\Debug\netcoreapp2.1\Model.pdb

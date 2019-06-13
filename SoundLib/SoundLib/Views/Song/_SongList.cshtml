@@ -1,0 +1,50 @@
+﻿@model List<Model.Song>
+
+<table class="table table-condensed songs" id="tbl-songs">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Duration</th>
+            <th>Rating</th>
+            <th>ReleaseDate</th>
+            <th>Album</th>
+            <th>Artist</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @{ var i = 0;
+            foreach (var item in Model)
+            {
+                <tr onmouseover="opacityRow(this)" onmouseout="normalRowOpacity(this)" class="opac">
+                    <td>@(i = i + 1).</td>
+                    <td><a href="#">@item.Title</a></td>
+                    <td>@item.Duration</td>
+                    <td>
+                        @item.Rating
+                    </td>
+                    <td>@item.ReleaseDate</td>
+
+                    <td><a asp-controller="Album" asp-action="Details" asp-route-id="@item.Album.Id">@item.Album.Title</a></td>
+                    <td><a asp-controller="Artist" asp-action="Details" asp-route-id="@item.Artist.Id">@item.Artist.FullName</a></td>
+                    <td>
+                        <a asp-controller="Song" asp-action="Edit" asp-route-id="@item.Id">
+                            <button type="submit" style=" margin-right: -15px; padding: 0 10px; background: rgb(29, 47, 61); border: none; -webkit-box-shadow: 0px 4px 5px 0px rgb(15, 202, 190); -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75); box-shadow: 0px 1px 2px 0px rgb(15, 202, 190);">
+                                <i class="fa fa-pencil-square-o" style="color: rgb(118, 124, 125);"></i>
+                            </button>
+                        </a>
+                    </td>
+                    <td>
+                        <form asp-action="Delete" asp-route-id="@item.Id" data-ajax="true" data-ajax-success="deleteItem(this)">
+                            <button type="submit" style=" padding: 0 10px; background: rgb(29, 47, 61); border: none; -webkit-box-shadow: 0px 4px 5px 0px rgb(15, 202, 190); -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75); box-shadow: 0px 1px 2px 0px rgb(15, 202, 190);">
+                                <i class="fa fa-trash-o" style="color: rgb(118, 124, 125);"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>

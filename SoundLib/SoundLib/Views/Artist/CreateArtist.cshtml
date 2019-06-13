@@ -1,0 +1,25 @@
+﻿@model Model.Artist
+
+@{
+    ViewData["Title"] = "Adding new artist";
+}
+
+<head>
+    <link href="~/css/Style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+
+
+<ol class="breadcrumb">
+    <li><a asp-controller="Artist" asp-action="Index">Artists</a></li>
+    <li class="active">New Artist</li>
+</ol>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateArtist">
+            <partial name="_CreateOrUpdateArtist" />
+        </form>
+    </div>
+</div>

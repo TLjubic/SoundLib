@@ -1,0 +1,38 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Model
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+<head>
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+</head>
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
+        <ul class="navbar-right" style="margin-top: 1px">
+            <li>
+                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" style="font-size: 1.2em; color: rgb(166, 47, 113); margin-right: -60px;">@UserManager.GetUserName(User)</a>
+            </li>
+            <li>
+                <button type="submit" class="btn btn-link navbar-btn" style="font-size: 1em; margin-right: 50px; color:rgb(118, 124, 125);">Logout</button>
+            </li>
+        </ul>
+    </form>
+}
+else
+{
+    <ul class="navbar-right colorLogin" style="margin-top: 15px;">
+        <li><a asp-area="Identity" asp-page="/Account/Login" style="font-size: 1em; margin-right: -60px;">Login</a></li>
+        <li><a asp-area="Identity" asp-page="/Account/Register" style="font-size: 1em; margin-right: 50px;">Register</a></li>
+    </ul>
+}
